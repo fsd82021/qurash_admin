@@ -20,4 +20,5 @@ return [
     'meta_keywords'   => 'الكلمات المفتاحية (ميتا)',
     'meta_description'   => 'الوصف (ميتا)',
     'footer_description'      => 'الوصف في الفوتر',
+    'footer_logo'      => ' لوجو الفوتر',
 ];

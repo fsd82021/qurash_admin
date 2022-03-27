@@ -26,8 +26,9 @@ class Setting extends Model implements TranslatableContract
         'facebook',
         'twitter',
         'instagram',
+        'linkedin',
         'email',
         'phone',
-        'brochure',
+        'footer_logo',
     ];
 }

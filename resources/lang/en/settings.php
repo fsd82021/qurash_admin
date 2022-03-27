@@ -20,4 +20,5 @@ return [
     'meta_keywords'      => 'meta keywords',
     'meta_description'      => 'meta description',
     'footer_description'      => 'footer description',
+    'footer_logo'      => 'footer logo',
 ];

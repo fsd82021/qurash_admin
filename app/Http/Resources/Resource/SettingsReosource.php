@@ -17,9 +17,11 @@ class SettingsReosource extends JsonResource
         return [
             'id' => $this->id,
             'logo' => asset($this->logo),
+            'footer_logo' => asset($this->footer_logo),
             'facebook' =>  $this->facebook,
             'twitter' =>  $this->twitter,
             'instagram' =>  $this->instagram,
+            'linkedin' =>  $this->linkedin,
             'email' =>  $this->email,
             'phone' =>  $this->phone,
             'website_title' => $this->translate($request->lang)->website_title,

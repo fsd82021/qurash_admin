@@ -11,6 +11,6 @@ class SettingsController extends Controller
 {
     public function settings()
     {
-         return SettingsReosource::collection(Setting::all());
+         return new SettingsReosource(Setting::first());
     }
 }

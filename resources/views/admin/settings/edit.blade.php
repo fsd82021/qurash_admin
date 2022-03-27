@@ -127,6 +127,17 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label>@lang('settings.linkedin')<span class="text-danger"> * </span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                            </div>
+                            <input type="url" name="linkedin" placeholder="@lang('settings.linkedin')" class="form-control  pl-5 min-h-40px @error($locale . '.linkedin') is-invalid @enderror" value="{{ old('linkedin', $data->linkedin) }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label>@lang('settings.email')<span class="text-danger"> * </span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -136,7 +147,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label>@lang('settings.phone')<span class="text-danger"> * </span></label>
                         <div class="input-group">
@@ -148,7 +159,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="d-block">@lang('settings.image')</label>
                         @if (isset($data->logo))
@@ -158,6 +169,28 @@
                                 <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
                                     <i class="fa fa-pen icon-sm text-muted"></i>
                                     <input type="file" name="logo" accept=".png, .jpg, .jpeg" />
+                                    <input type="hidden" name="profile_avatar_remove" />
+                                </label>
+                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
+                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                </span>
+                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
+                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                </span>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="d-block">@lang('settings.footer_logo')</label>
+                        @if (isset($data->logo))
+                            <div class="image-input-wrapper" style="background-image: url({{ asset($data->footer_logo) }}"></div>
+                            <div class="image-input image-input-empty image-input-outline" id="kt_image_5" style="background-image: url({{ asset($data->footer_logo) }})">
+                                <div class="image-input-wrapper"></div>
+                                <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                    <input type="file" name="footer_logo" accept=".png, .jpg, .jpeg" />
                                     <input type="hidden" name="profile_avatar_remove" />
                                 </label>
                                 <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">

@@ -29,7 +29,6 @@ class SettingsRequest extends FormRequest
             'instagram' => 'required|url',
             'email' => 'required|email',
             'phone' => 'required|string',
-            'brochure' => 'required',
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.website_title' => ['required', 'string']];

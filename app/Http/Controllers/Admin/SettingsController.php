@@ -37,10 +37,10 @@ class SettingsController extends Controller
         } else {
             unset($data['logo']);
         }
-        if ($request->hasFile('brochure')) {
-            $data['brochure'] = upload_file($request->file('brochure'), 'file');
+        if ($request->hasFile('footer_logo')) {
+            $data['footer_logo'] = upload_file($request->file('footer_logo'), 'image');
         } else {
-            unset($data['brochure']);
+            unset($data['footer_logo']);
         }
         $general->fill($data)->save();
         return $general ? redirect(route('settings.edit'))->with(['success' => trans('general.updated_success')]) : redirect()->back();
