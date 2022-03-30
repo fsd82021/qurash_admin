@@ -19,6 +19,7 @@ class BlogReosource extends JsonResource
             'image' => asset($this->icon),
             'title' => $this->translate($request->lang)->name,
             'description' => $this->translate($request->lang)->description,
+            'creationDate' =>  $this->created_at->format('d/m/Y'),
         ];
     }
 }

@@ -7,6 +7,8 @@ use App\Http\Resources\Resource\ServiceReosource;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\BaseController as BaseController;
+use App\Http\Resources\Resource\AboutResource;
+use App\Models\Page;
 
 class ServiceController extends BaseController
 {
@@ -23,7 +25,9 @@ class ServiceController extends BaseController
     {
         $service = Service::find($request->id);
         if ($service) {
-            $data = new ServiceReosource($service);
+            $data['single_service'] = new ServiceReosource($service);
+            $data['contact'] = new AboutResource(Page::where('identifier', 'contact')->first());
+            $data['services'] = ServiceReosource::collection(Service::get());
             return response()->json([
                 'status' => 'success',
                 'data' => $data

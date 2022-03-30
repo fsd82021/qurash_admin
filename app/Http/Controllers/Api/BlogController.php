@@ -7,12 +7,14 @@ use App\Http\Resources\Resource\BlogReosource;
 use App\Models\Feature;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\BaseController as BaseController;
+use App\Http\Resources\Resource\AboutResource;
+use App\Models\Page;
 
 class BlogController extends BaseController
 {
     public function index()
     {
-        $data['blogs'] = BlogReosource::collection(Feature::get());
+        $data = BlogReosource::collection(Feature::get());
         return response()->json([
             'status' => 'success',
             'data' => $data
@@ -23,7 +25,9 @@ class BlogController extends BaseController
     {
         $blog = Feature::find($request->id);
         if ($blog) {
-            $data = new BlogReosource($blog);
+            $data['blogDetails'] = new BlogReosource($blog);
+            $data['contact'] = new AboutResource(Page::where('identifier', 'contact')->first());
+            $data['blogs'] = BlogReosource::collection(Feature::get());
             return response()->json([
                 'status' => 'success',
                 'data' => $data

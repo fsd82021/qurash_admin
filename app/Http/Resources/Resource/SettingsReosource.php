@@ -25,6 +25,7 @@ class SettingsReosource extends JsonResource
             'email' =>  $this->email,
             'phone' =>  $this->phone,
             'website_title' => $this->translate($request->lang)->website_title,
+            'copyrights' => $this->translate($request->lang)->copyrights,
             'meta_title' => $this->translate($request->lang)->meta_title,
             'meta_description' => $this->translate($request->lang)->meta_description,
             'footer_description' => $this->translate($request->lang)->footer_description,

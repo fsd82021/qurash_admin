@@ -75,7 +75,7 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                            <li class="menu-item">
+                            {{-- <li class="menu-item">
                                 <a href="{{ route('page.service') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -83,7 +83,7 @@
                                     <span
                                         class="menu-text">{{ trans('general.aside.pages.our-services') }}</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="menu-item">
                                 <a href="{{ route('service.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
@@ -317,14 +317,14 @@
                                         class="menu-text">{{ trans('general.aside.pages.renovation') }}</span>
                                 </a>
                             </li> --}}
-                            <li class="menu-item">
+                            {{-- <li class="menu-item">
                                 <a href="{{ route('page.contact') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
                                     <span class="menu-text">{{ trans('general.aside.pages.contact') }}</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <!--<li class="menu-item">-->
                             <!--    <a href="{{ route('page.faq') }}" class="menu-link">-->
                             <!--        <i class="menu-bullet menu-bullet-dot">-->
